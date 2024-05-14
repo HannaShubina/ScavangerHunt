@@ -1,0 +1,15 @@
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin: 20px 0;
+  text-align: center;
+}
+.rule {
+   margin-bottom: 20px;
+}
+.rules{
+  background: #815e5b;
+  padding: 20px;
+  width: 70%;
+  border-radius: 10px;
+}

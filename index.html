@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Main Page - Scavenger Hunt Adventure!</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="header.css">
+<script src="script.js"></script>
+</head>
+<body>
+	<nav>
+	  <ul>
+	    <li><a href="index.html">Main</a></li>
+	    <li><a href="rules.html">Rules</a></li>
+	    <li><a href="pebbles.html">Pebbles</a></li>
+	    <li><a href="support.html">Support</a></li>
+	  </ul>
+	</nav>
+	<h1>Scavenger Hunt Adventure!</h1>
+	<div id="progress-container">
+	  <div id="progress-bar">0%</div>
+	</div>
+	<div id="time-limit">Time Limit: <span id="time-remaining">15:00</span>
+	</div>
+	<p id="clue"></p>
+	<p id="hint"></p>
+	<div id="pebbles-earned"></div>
+	<br>
+	<button onclick="getLocation()">Share Location</button>
+	<button onclick="confirmHint()">Hint</button>
+
+<script>
+  let currentClue = "Welcome to the Scavenger Hunt Adventure! Get ready for a thrilling journey!";
+  let currentLocationIndex = 0;
+  const locations = [
+    { // Location 1 details
+      name: "Start",
+      hint: "To start you have to press 'Share location'. Good luck!",
+      latitude: 47.0414736 , // Replace with the actual latitude
+      longitude: 9.0599272  // Replace with the actual longitude
+    },
+    { // Location 2 details
+      name: "The Clock Tower",
+      clue: "Time stands still where hands point true, a silent guardian overlooking the view.",
+      hint: "Search for a structure that stands tall and has a clock face.",
+      latitude: 47.0414736 , // Replace with the actual latitude
+      longitude: 9.0599272  // Replace with the actual longitude
+    },
+    { // Location 3 details (add more locations as needed)
+      name: "The Secret Garden",
+      clue: "Follow the scent of blooming beauty, where hidden treasures whisper a secret story.",
+      hint: "Explore areas with lush vegetation and secluded spots.",
+      latitude: 47.0414736 , // Replace with the actual latitude
+      longitude: 9.0599272  // Replace with the actual longitude
+    },
+    { // Location 4 details (add more locations as needed)
+      name: "The Wishing Well",
+      clue: "Cast a coin and make a wish, where dreams take flight on a shimmering kiss.",
+      hint: "Look for a circular structure surrounded by greenery.",
+      latitude: 47.0414736 , // Replace with the actual latitude
+      longitude: 9.0599272  // Replace with the actual longitude
+    }
+  ];
+  document.getElementById("clue").innerHTML = currentClue;
+ 
+  // Set time limit in seconds (15 minutes = 900 seconds)
+  const timeLimitInSeconds = 900;
+  let timeRemaining = timeLimitInSeconds;
+ 
+  // Set virtual currency (pebbles) earned by the user
+  let totalPebblesEarned = 0;
+ 
+  // Display initial time remaining
+  updateTimerDisplay();
+ 
+  // Start the countdown timer
+  let timerInterval;
+</script>
+</body>
+</html>
